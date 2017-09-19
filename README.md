@@ -1,7 +1,7 @@
 # Vietnamese word segentation
 
 ## Copus
-VLSP_SP73
+VLSP_SP73  
 training set: 53204 sentences  
 testing set : 14993 sentences
 
@@ -9,7 +9,7 @@ testing set : 14993 sentences
 ### B-LSTM + relu + softmax
 > python word_segmentation_all_word2vec.py
 
-model save into models/word2vec
+models save into models/word2vec
 
 ### B-LSTM + CRF
 > python word_segmentation_all_word2vec_crf.py
