@@ -7,12 +7,14 @@ testing set : 14993 sentences
 
 ## Models
 ### B-LSTM + relu + softmax
-> python word_segmentation_all_word2vec.py  
-#####model save into models/word2vec
+> python word_segmentation_all_word2vec.py
+
+model save into models/word2vec
 
 ### B-LSTM + CRF
-> python word_segmentation_all_word2vec_crf.py  
-#####models save into ./models/crf
+> python word_segmentation_all_word2vec_crf.py
+
+models save into ./models/crf
 
 ## Evaluate
 Evaluate on training data
