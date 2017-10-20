@@ -19,7 +19,7 @@ def make_char_dictionary(data_path, dict_path):
 				char_dictionary.append(char)
 	f.close()
 	### remove duplicate characters
-	char_dictionary = list(set(char_dictionary))
+	char_dictionary = sorted(list(set(char_dictionary)))
 	### save character dictionary
 	f = open(dict_path, 'w')
 	for char in char_dictionary:
@@ -32,7 +32,7 @@ def load_dictionary(dict_path):
 	char_dictionary = set()
 	for row in f:
 		char_dictionary.add(row[:-1])
-	char_dictionary = list(char_dictionary)
+	char_dictionary = sorted(list(char_dictionary))
 	f.close()
 	return char_dictionary
 
@@ -129,7 +129,7 @@ def main():
 	epochs = int(sys.argv[10])					# number of epoch
 	percent_GPU = float(sys.argv[11])			# percentage GPU uses
 	work = sys.argv[12]							# 'train' or 'test'
-	load_data_path = './Vietnamese Word Segmentation/random_corpus/' + sys.argv[13] + '/test_corpus'
+	load_data_path = './Vietnamese Word Segmentation/random_corpus/' + sys.argv[13] + '/train_corpus'
 	save_model_path = sys.argv[14]
 	epoch = int(sys.argv[15])					# evaluate epoch
 	# load pretrain model

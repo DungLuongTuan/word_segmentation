@@ -87,8 +87,8 @@ class CNN_BLSTM_CRF(object):
 		self.w_conv = tf.get_variable(name = 'w_conv', shape = [self.char_embedding_size*self.window_size, self.number_conv_units], dtype = tf.float32)
 		self.b_conv = tf.get_variable(name = 'b_conv', shape = [self.number_conv_units], dtype = tf.float32)
 		### BLSTM + CRF variables
-		self.w = tf.Variable(tf.truncated_normal([2*self.n_hidden, self.num_tag]), name = 'w_lstm')
-		self.b = tf.Variable(tf.truncated_normal([1, self.num_tag]), name = 'b_lstm')
+		self.w = tf.get_variable(name = 'w_lstm', shape = [2*self.n_hidden, self.num_tag], dtype = tf.float32)
+		self.b = tf.get_variable(name = 'b_lstm', shape = [1, self.num_tag], dtype = tf.float32)
 
 
 	def get_character_level_information(self):

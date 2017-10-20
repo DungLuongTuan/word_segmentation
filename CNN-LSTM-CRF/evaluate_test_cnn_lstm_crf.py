@@ -19,7 +19,7 @@ def make_char_dictionary(data_path, dict_path):
 				char_dictionary.append(char)
 	f.close()
 	### remove duplicate characters
-	char_dictionary = list(set(char_dictionary))
+	char_dictionary = sorted(list(set(char_dictionary)))
 	### save character dictionary
 	f = open(dict_path, 'w')
 	for char in char_dictionary:
@@ -32,7 +32,7 @@ def load_dictionary(dict_path):
 	char_dictionary = set()
 	for row in f:
 		char_dictionary.add(row[:-1])
-	char_dictionary = list(char_dictionary)
+	char_dictionary = sorted(list(char_dictionary))
 	f.close()
 	return char_dictionary
 
